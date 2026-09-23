@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Encontre repositórios públicos do GitHub por palavra-chave."
+    />
+    <title>Buscador de repositórios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <span class="eyebrow">GitHub Explorer</span>
+        <h1>Encontre seu próximo repositório</h1>
+        <p>Pesquise projetos públicos por nome, assunto ou tecnologia.</p>
+      </header>
+
+      <section class="search-card" aria-labelledby="search-title">
+        <h2 id="search-title" class="sr-only">Pesquisar repositórios</h2>
+
+        <form id="search-form" role="search">
+          <label for="search-input">O que você quer encontrar?</label>
+          <div class="input-wrapper">
+            <svg
+              aria-hidden="true"
+              class="search-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              id="search-input"
+              name="query"
+              type="search"
+              placeholder="Ex.: javascript, react, inteligência artificial"
+              autocomplete="off"
+            />
+          </div>
+          <p class="search-hint">Pressione <kbd>Enter</kbd> para pesquisar</p>
+        </form>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-title">
+        <div class="results-heading">
+          <h2 id="results-title">Resultados</h2>
+          <span id="results-count" class="results-count"></span>
+        </div>
+
+        <div id="status" class="status" role="status" aria-live="polite">
+          <svg
+            aria-hidden="true"
+            class="status-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+            <path d="M12 3v18M3 12h18"></path>
+          </svg>
+          <p>Digite um termo para começar a explorar.</p>
+        </div>
+
+        <div id="results-list" class="results-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
